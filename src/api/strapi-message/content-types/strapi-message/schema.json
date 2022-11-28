@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "strapi_messages",
+  "info": {
+    "singularName": "strapi-message",
+    "pluralName": "strapi-messages",
+    "displayName": "Strapi Message",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "message": {
+      "type": "text",
+      "required": true
+    },
+    "strapi_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::strapi-user.strapi-user",
+      "inversedBy": "strapi_messages"
+    },
+    "strapi_group": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::strapi-group.strapi-group",
+      "inversedBy": "strapi_messages"
+    }
+  }
+}
